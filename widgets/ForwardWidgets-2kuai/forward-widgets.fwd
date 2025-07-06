@@ -1,7 +1,7 @@
 {
   "title": "2Kuai Widgets",
   "description": "Third-Party Widgets",
-  "icon": "https://assets.vvebo.vip/scripts/icon.png",
+  "icon": "https://raw.githubusercontent.com/nori5555/ForwardWidgets/main/fw.png",
   "widgets": [
     {
       "id": "hot_picks",
