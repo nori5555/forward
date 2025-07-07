@@ -1,7 +1,7 @@
 {
   "title": "YY‘s Widgets",
   "description": "A collection of widgets created by YY",
-  "icon": "https://raw.githubusercontent.com/nori5555/ForwardWidgets/main/fd.png",
+  "icon": "https://raw.githubusercontent.com/nori5555/ForwardWidgets/main/fp.png",
   "widgets": [
     {
       "id": "hot_picks",
