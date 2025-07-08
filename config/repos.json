@@ -30,7 +30,7 @@
     },
     {
       "name": "scripts-bemarkt",
-      "url": "https://github.com/bemarkt/scripts/tree/master/provider/Forward",
+      "url": "https://github.com/bemarkt/scripts",
       "branch": "master",
       "target_dir": "widgets/scripts-bemarkt",
       "description": "Scripts by bemarkt - Forward Provider Scripts"

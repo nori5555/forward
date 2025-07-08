@@ -63,6 +63,9 @@ for repo in $repos; do
         # 复制文件（排除.git目录，只读模式：不修改源文件）
         rsync -av --exclude='.git' $temp_repo_dir/ $target_dir/
         
+        # 添加变更到Git暂存区
+        git add $target_dir/
+        
         # 验证源文件完整性（确保未被修改）
         if [ -d "$temp_repo_dir" ]; then
             echo "🔍 验证源文件完整性..."
@@ -92,6 +95,8 @@ if [ -f "scripts/aggregate.sh" ]; then
     ./scripts/aggregate.sh
     if [ $? -eq 0 ]; then
         echo "✅ Widget汇聚完成！"
+        # 添加汇聚产生的文件到Git暂存区
+        git add *.fwd 2>/dev/null || true
         # 检查汇聚是否产生了新文件
         if [ -n "$(git status --porcelain forward-widgets.fwd widgets.fwd 2>/dev/null)" ]; then
             HAS_UPDATES=true
@@ -118,6 +123,8 @@ if [ "$HAS_UPDATES" = true ]; then
         fi
         mv $UPDATE_LOG.new $UPDATE_LOG
         rm $UPDATE_LOG.tmp
+        # 添加更新日志到Git暂存区
+        git add $UPDATE_LOG
     fi
     
     echo "🎉 更新完成！"
