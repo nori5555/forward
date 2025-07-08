@@ -27,6 +27,20 @@
       "branch": "main",
       "target_dir": "widgets/Forward-opix-maker",
       "description": "Forward by opix-maker - Bangumi和IMDb相关组件"
+    },
+    {
+      "name": "scripts-bemarkt",
+      "url": "https://github.com/bemarkt/scripts/tree/master/provider/Forward",
+      "branch": "master",
+      "target_dir": "widgets/scripts-bemarkt",
+      "description": "Scripts by bemarkt - Forward Provider Scripts"
+    },
+    {
+      "name": "ForwardWidgets-Madai-v",
+      "url": "https://github.com/Madai-v/ForwardWidgets",
+      "branch": "main",
+      "target_dir": "widgets/ForwardWidgets-Madai-v",
+      "description": "ForwardWidgets by Madai-v - 额外的Forward组件"
     }
   ],
   "settings": {
