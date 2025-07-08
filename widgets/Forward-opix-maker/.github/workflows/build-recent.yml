@@ -1,0 +1,46 @@
+name: Build Recent Data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */8 * * *'
+
+
+# 设置并发组，确保同时只有一个实例在运行，新的运行会取消旧的
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 建议配置 user/email 以便 rebase 成功
+      - name: Synchronize with remote branch
+        run: |
+           git config --global user.email "action@github.com"
+           git config --global user.name "GitHub Action"
+           git pull --rebase
+
+      - name: Build Recent Data
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          BGM_USER_AGENT: ${{ secrets.BGM_USER_AGENT }}
+          BUILD_TYPE: 'recent'
+        run: |
+          echo '{ "dependencies": { "node-fetch": "^2.7.0", "cheerio": "^1.0.0-rc.12" } }' > package.json
+          npm install
+          node build_data.js
+      
+      - name: Commit and push if changed
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(data): Auto-update recent_data.json'
+          file_pattern: 'recent_data.json'

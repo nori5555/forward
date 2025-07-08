@@ -1,0 +1,77 @@
+name: Build IMDb Discovery Engine Data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */12 * * *'
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: ${{ github.workflow }}-build
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+
+      # 1. Pull latest changes FIRST, on a clean checkout.
+      - name: Synchronize with remote branch
+        run: |
+           git config --global user.email "action@github.com"
+           git config --global user.name "GitHub Action"
+           # This now runs before the cache is restored, so it will always succeed.
+           git pull --rebase
+
+      # 2. Restore the cache AFTER the repository is up-to-date.
+      - name: Cache dist directory
+        id: cache-dist
+        uses: actions/cache@v4
+        with:
+          path: imdb-data-platform/dist
+          key: ${{ runner.os }}-dist-${{ github.workflow }}
+      
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: imdb-data-platform/package.json
+
+      - name: Install dependencies
+        working-directory: ./imdb-data-platform
+        run: npm install
+
+      - name: Run build script
+        working-directory: ./imdb-data-platform
+        env:
+          TMDB_ACCESS_TOKEN_V4: ${{ secrets.TMDB_ACCESS_TOKEN_V4 }}
+        run: npm run build
+
+      - name: Commit and Push if Changed
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          
+          if [[ -n $(git status -s imdb-data-platform/dist/) ]]; then
+            echo "✅ Changes detected in the database. Preparing to commit."
+            git add imdb-data-platform/dist/
+            git commit -m "chore(data): Auto-update IMDb discovery database" --no-verify
+            git push
+            echo "✅ Database changes have been committed and pushed."
+          else
+            echo "✅ No changes detected in the database. Nothing to commit."
+          fi
+          
+      - name: Notify on Failure
+        if: failure()
+        run: echo "❌ Build workflow failed! Check logs."
