@@ -20,7 +20,14 @@
       "branch": "main",
       "target_dir": "widgets/ForwardWidgets-pack1r",
       "description": "ForwardWidgets by pack1r - JS组件模块库"
-    }    
+    },
+    {
+      "name": "Forward-opix-maker",
+      "url": "https://github.com/opix-maker/Forward",
+      "branch": "main",
+      "target_dir": "widgets/Forward-opix-maker",
+      "description": "Forward by opix-maker - Bangumi和IMDb相关组件"
+    }
   ],
   "settings": {
     "auto_commit": true,
