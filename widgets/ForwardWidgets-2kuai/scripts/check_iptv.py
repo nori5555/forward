@@ -10,14 +10,11 @@ import time
 from urllib.parse import urlparse
 from typing import Tuple, Optional
 
-# 配置日志
+# 配置日志 - 只保留控制台输出
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.StreamHandler(),
-        logging.FileHandler('iptv_check.log', encoding='utf-8')
-    ]
+    handlers=[logging.StreamHandler()]
 )
 logger = logging.getLogger(__name__)
 
@@ -27,128 +24,49 @@ class SourceChecker:
         self.session.headers.update({
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         })
-        self.timeout = 10  # 全局超时设置
+        self.timeout = 30  # 全局超时设置
 
-    def _ffprobe_check(self, url: str, is_rtmp: bool = False) -> Tuple[bool, str]:
-        """只要ffprobe有输出就判为活着，不再要求流特征。"""
+    def _vlc_check(self, url: str) -> Tuple[bool, str]:
+        """用cvlc检测直播源（支持rtmp等），分析输出内容，只有包含关键字才判为可用。"""
         try:
-            if is_rtmp:
-                probe_cmd = [
-                    'ffprobe', '-v', 'error',
-                    '-rw_timeout', '10000000',
-                    '-select_streams', 'v:0',
-                    '-show_entries', 'format=duration',
-                    '-of', 'csv=print_section=0',
-                    url
-                ]
-            else:
-                probe_cmd = [
-                    'ffprobe', '-v', 'error',
-                    '-timeout', '10000000',
-                    '-select_streams', 'v:0',
-                    '-show_entries', 'stream=codec_name,width,height',
-                    '-of', 'csv=print_section=0',
-                    url
-                ]
-            probe_result = subprocess.run(
-                probe_cmd,
+            # --intf dummy: 无界面
+            # --run-time=15: 最多加载15秒
+            # -vvv: 最高详细度日志
+            vlc_cmd = [
+                'cvlc', '--intf', 'dummy', '--run-time=15', '-vvv', url
+            ]
+            result = subprocess.run(
+                vlc_cmd,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
-                timeout=self.timeout
+                timeout=self.timeout  # 最长30秒超时
             )
-            if probe_result.returncode != 0:
-                error_msg = probe_result.stderr.decode('utf-8').strip()
-                return False, f"FFprobe验证失败: {error_msg if error_msg else '未知错误'}"
-            output = probe_result.stdout.decode('utf-8').strip()
-            if output:
-                return True, "ffprobe有输出，判为活着"
+            output = (result.stdout.decode('utf-8', errors='ignore') + '\n' + result.stderr.decode('utf-8', errors='ignore')).lower()
+            keywords = ['audio output', 'video output', 'decoder', 'stream_out', 'rtmp', 'demux']
+            if any(kw in output for kw in keywords):
+                return True, "cvlc检测通过，输出包含关键字，判为可用"
             else:
-                return False, "ffprobe无输出"
+                return False, f"cvlc检测失败: 输出不包含关键字。部分输出: {output[:200]}"
         except subprocess.TimeoutExpired:
-            return False, "FFprobe检测超时"
+            return False, "cvlc检测超时"
         except Exception as e:
-            return False, f"FFprobe检测异常: {str(e)}"
+            return False, f"cvlc检测异常: {str(e)}"
 
-    def check_source_advanced(self, url: str) -> Tuple[str, str, Optional[float], Optional[float]]:
-        """GET只判断状态码是否200，不判断Content-Type。ffprobe成功为high，GET成功但ffprobe失败为medium，GET失败为fail。"""
-        def _detect():
-            try:
-                logger.debug(f"开始GET检测: {url}")
-                start_get = time.time()
-                resp = self.session.get(url, timeout=self.timeout, stream=True)
-                get_time = time.time() - start_get
-                if resp.status_code != 200:
-                    logger.debug(f"GET状态码非200: {url} {resp.status_code}")
-                    return 'fail', f'GET状态码: {resp.status_code}', get_time, None
-                logger.debug(f"GET成功: {url} 状态码: {resp.status_code} 用时: {get_time:.2f}s")
-                # ffprobe检测
-                start_probe = time.time()
-                ok, msg = self._ffprobe_check(url)
-                probe_time = time.time() - start_probe
-                logger.debug(f"ffprobe检测: {url} 结果: {ok} {msg} 用时: {probe_time:.2f}s")
-                if ok:
-                    return 'high', 'ffprobe通过', get_time, probe_time
-                else:
-                    return 'medium', f'GET成功, ffprobe失败: {msg}', get_time, probe_time
-            except Exception as e:
-                logger.debug(f"GET检测异常: {url} {e}")
-                return 'fail', f'GET失败: {e}', None, None
-        status, reason, get_time, probe_time = _detect()
-        if status == 'fail':
-            logger.debug(f"首次检测失败，重试: {url}")
-            time.sleep(1)
-            status, reason, get_time, probe_time = _detect()
-        return status, reason, get_time, probe_time
-
-    def check_http_source(self, url):
-        try:
-            # 直接GET部分内容
-            try:
-                get_response = self.session.get(
-                    url,
-                    timeout=self.timeout,
-                    stream=True
-                )
-                get_response.raise_for_status()
-                content_type = get_response.headers.get('Content-Type', '').lower()
-                if 'text/html' in content_type:
-                    return False, "Content-Type为HTML"
-                # 检查内容签名（可选）
-                try:
-                    chunk = next(get_response.iter_content(1024), b'')
-                    if any(sig in chunk for sig in [b'#EXTM3U', b'FLV', b'ftyp']):
-                        return True, "内容签名通过"
-                except Exception:
-                    pass  # 内容签名检测失败不影响整体判断
-                # 能GET到内容且不是HTML就算有效
-                return True, "GET成功，内容类型有效"
-            except requests.RequestException as e:
-                return False, f"GET请求失败: {str(e)}"
-        except Exception as e:
-            return False, f"HTTP检测异常: {str(e)}"
-
-    def check_rtmp_source(self, url):
-        """RTMP源专用检测"""
-        try:
-            # 基本URL解析
-            parsed = urlparse(url)
-            if not parsed.netloc:
-                return False, "无效的RTMP URL"
-
-            # 使用FFprobe进行RTMP验证
-            return self._ffprobe_check(url, is_rtmp=True)
-            
-        except Exception as e:
-            return False, f"RTMP检测异常: {str(e)}"
+    def check_source_vlc_only(self, url: str) -> Tuple[bool, str, Optional[float]]:
+        """只用cvlc检测，只要能正常播放就判为可用。"""
+        start_check = time.time()
+        ok, msg = self._vlc_check(url)
+        check_time = time.time() - start_check
+        return ok, msg, check_time
 
 def check_dependencies() -> list:
     """检查所有必要依赖是否安装"""
-    required_tools = ['ffmpeg', 'ffprobe']
+    required_tools = ['cvlc']
     missing_tools = []
     for tool in required_tools:
         try:
             subprocess.run(
-                [tool, '-version'],
+                [tool, '--version'],
                 check=True,
                 stdout=subprocess.DEVNULL,
                 stderr=subprocess.DEVNULL,
@@ -161,29 +79,32 @@ def check_dependencies() -> list:
     return missing_tools
 
 def process_channel(channel: dict, max_workers: int = 10) -> dict:
-    """处理单个频道及其所有源，GET成功全部保留，ffprobe结果只影响排序，GET失败的不保留。"""
+    """处理单个频道及其所有源，只用cvlc检测，检测通过的全部保留。"""
     if 'childItems' not in channel or not channel['childItems']:
         return channel
     checker = SourceChecker()
     results = []
-    SLOW_THRESHOLD = 5.0
+    SLOW_THRESHOLD = 10.0
     urls = channel['childItems']
     with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-        future_to_url = {executor.submit(checker.check_source_advanced, url): url for url in urls}
+        future_to_url = {executor.submit(checker.check_source_vlc_only, url): url for url in urls}
         for future in concurrent.futures.as_completed(future_to_url):
             url = future_to_url[future]
             try:
-                status, reason, get_time, probe_time = future.result()
+                ok, msg, check_time = future.result()
             except Exception as exc:
-                status, reason, get_time, probe_time = 'fail', f'检测异常: {exc}', None, None
-            total_time = (get_time or 0) + (probe_time or 0)
-            speed = 'fast' if total_time <= SLOW_THRESHOLD else 'slow'
-            logger.info(f"[RESULT] 状态: {status} | 速率: {speed} | 总耗时: {total_time:.2f}s | 频道: {channel.get('name','')} | URL: {url} | 原因: {reason}")
-            if status in ('high', 'medium'):
-                results.append((status, total_time, url))
-    # 排序：high > medium，同级别按total_time升序
-    results.sort(key=lambda x: (0 if x[0]=='high' else 1, x[1]))
-    channel['childItems'] = [item[2] for item in results]
+                ok, msg, check_time = False, f'检测异常: {exc}', None
+            speed = 'fast' if (check_time or 0) <= SLOW_THRESHOLD else 'slow'
+            logger.info(
+                f"\n频道: 【{channel.get('name','')}】  {url}"
+                f"\n状态: {'ok' if ok else 'fail'} | 速率: {speed} | 耗时: {check_time:.2f}s"
+                f"\n结果: {msg}"
+            )
+            if ok:
+                results.append((check_time, url))
+    # 按check_time升序排序
+    results.sort(key=lambda x: x[0])
+    channel['childItems'] = [item[1] for item in results]
     return channel
 
 def main(input_file: str, output_file: str, max_workers: int = 10):
@@ -223,7 +144,7 @@ if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument('-i', '--input', default='iptv_sources.json', help='输入JSON文件路径')
-    parser.add_argument('-o', '--output', default='data/iptv_data.json', help='输出JSON文件路径')
+    parser.add_argument('-o', '--output', default='data/iptv-data.json', help='输出JSON文件路径')
     parser.add_argument('-w', '--workers', type=int, default=10, help='并发工作线程数')
     parser.add_argument('-v', '--verbose', action='store_true', help='启用详细日志')
     args = parser.parse_args()
