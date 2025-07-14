@@ -268,6 +268,9 @@ trakt追剧日历：12小时
 地区榜单：24小时
 ```
 
+### Forward图标库自助上传
+请跳转项目：[PicStoreJson](https://github.com/huangxd-/PicStoreJson)
+
 ### 📈项目 Star 数增长趋势
 #### Star History
 [![Star History Chart](https://api.star-history.com/svg?repos=huangxd-/ForwardWidgets&type=Date)](https://www.star-history.com/#huangxd-/ForwardWidgets&Date)
