@@ -22,11 +22,11 @@
       "description": "ForwardWidgets by pack1r - JS组件模块库"
     },
     {
-      "name": "Forward-opix-maker",
-      "url": "https://github.com/opix-maker/Forward",
+      "name": "Forward-xbzl",
+      "url": "https://github.com/xbzl/Forward",
       "branch": "main",
       "target_dir": "widgets/Forward-opix-maker",
-      "description": "Forward by opix-maker - Bangumi和IMDb相关组件"
+      "description": "Forward by xbzl - Bitch直播"
     },
     {
       "name": "scripts-bemarkt",
