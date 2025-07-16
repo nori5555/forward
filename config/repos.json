@@ -41,6 +41,13 @@
       "branch": "main",
       "target_dir": "widgets/ForwardWidgets-Madai-v",
       "description": "ForwardWidgets by Madai-v - 额外的Forward组件"
+    },
+    {
+      "name": "ForwardWidgets-Madai-v",
+      "url": "https://github.com/quantumultxx/ForwardWidgets",
+      "branch": "main",
+      "target_dir": "widgets/ForwardWidgets-quantumultxx",
+      "description": "ForwardWidgets by quantumultxx - 蝴蝶"
     }
   ],
   "settings": {
