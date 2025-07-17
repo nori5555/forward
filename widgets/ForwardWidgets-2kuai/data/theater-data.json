@@ -1,7 +1,18 @@
 {
-  "last_updated": "2025-07-06T00:26:09.549+08:00",
+  "last_updated": "2025-07-17T00:31:16.120+08:00",
   "迷雾剧场": {
     "aired": [
+      {
+        "id": 252579,
+        "type": "tmdb",
+        "title": "正当防卫",
+        "description": "市检察院资深检察官段鸿山在办理“被家暴女性杀夫”案件时，省检察院青年检察官方灵渊被任派协助办案。两人办案过程中，发现案件与十四年前段鸿山办理的李沐风、梅筝、江婷经历的“校园防卫过当案”息息相关，二人以事实为根据，以法律为准绳，综合考量“天理、人情、国法”，最终给予案件准确定性的故事。",
+        "posterPath": "https://image.tmdb.org/t/p/w500/aN5zvCICkWb8YaC8Se4db3ULN4n.jpg",
+        "backdropPath": "https://image.tmdb.org/t/p/w500/8gs6DdpOVVs8v4zWUdnI6mGJERQ.jpg",
+        "releaseDate": "2025-07-09",
+        "rating": 10,
+        "mediaType": "tv"
+      },
       {
         "id": 261592,
         "type": "tmdb",
@@ -10,7 +21,7 @@
         "posterPath": "https://image.tmdb.org/t/p/w500/2UDUw8YRqVJZD2U55rRDLDpYoer.jpg",
         "backdropPath": "https://image.tmdb.org/t/p/w500/wamVXjQotdYo6K9EP3W95fdOEW2.jpg",
         "releaseDate": "2025-04-18",
-        "rating": 7,
+        "rating": 7.273,
         "mediaType": "tv"
       },
       {
@@ -32,7 +43,7 @@
         "posterPath": "https://image.tmdb.org/t/p/w500/bEcFBnDwUXXDizdaR5EiC0qRhS3.jpg",
         "backdropPath": "https://image.tmdb.org/t/p/w500/z1buWt3MeqamyzVbKggLtlG1rZV.jpg",
         "releaseDate": "2025-01-17",
-        "rating": 6.2,
+        "rating": 6.556,
         "mediaType": "tv"
       },
       {
@@ -96,7 +107,7 @@
         "title": "尘封十三载",
         "description": "1997年未能侦破的特殊杀人案件在13年后重现，当年一直没有追查到真凶的刑警卫峥嵘（陈建斌 饰）备受打击离开一线，而曾经初出茅庐的新警陆行知（陈晓 饰）褪去稚嫩青涩，已成为缜密细致的刑侦能手，案件的重重巧合让师徒二人再次走到了一起，合力追缉真凶。",
         "posterPath": "https://image.tmdb.org/t/p/w500/yuwk2VALuEwiDnY2tJ5yiNqEtBr.jpg",
-        "backdropPath": "https://image.tmdb.org/t/p/w500/jTOFSIONfYnlLeqA3iYCzIoJnOi.jpg",
+        "backdropPath": "https://image.tmdb.org/t/p/w500/n7F79xjSkhJJp7IIXGEtmqBFdcS.jpg",
         "releaseDate": "2023-04-06",
         "rating": 7.8,
         "mediaType": "tv"
@@ -247,17 +258,6 @@
     ],
     "upcoming": [
       {
-        "id": 252579,
-        "type": "tmdb",
-        "title": "正当防卫",
-        "description": "市检察院资深检察官段鸿山在办理“被家暴女性杀夫”案件时，省检察院青年检察官方灵渊被任派协助办案。两人办案过程中，发现案件与十四年前段鸿山办理的李沐风、梅筝、江婷经历的“校园防卫过当案”息息相关，二人以事实为根据，以法律为准绳，综合考量“天理、人情、国法”，最终给予案件准确定性的故事。",
-        "posterPath": "https://image.tmdb.org/t/p/w500/jMppzp6ohtFBKoAe89KyUIPfAfv.jpg",
-        "backdropPath": "https://image.tmdb.org/t/p/w500/9xvzNkAzJQ1yUw9mytGUaVXrbpB.jpg",
-        "releaseDate": "2025-07-09",
-        "rating": 0,
-        "mediaType": "tv"
-      },
-      {
         "id": 263151,
         "type": "tmdb",
         "title": "树影迷宫",
@@ -288,10 +288,10 @@
         "type": "tmdb",
         "title": "以法之名",
         "description": "本剧讲述了海东省检察院检察官洪亮、郑雅萍等人在复查东平市“万海黑社会性质组织案”过程中发现司法人员在案件中的徇私枉法。他们以举报线索为突破口，彻底打掉了背后的黑恶势力，同时查办司法工作人员的职务犯罪。",
-        "posterPath": "https://image.tmdb.org/t/p/w500/qQ2l2l9hNLIufPKlOLpkNpBUEEP.jpg",
+        "posterPath": "https://image.tmdb.org/t/p/w500/yXf1VPIHJFxuR4dvovjz3oaFwNm.jpg",
         "backdropPath": "https://image.tmdb.org/t/p/w500/yzWsuXA9CORUwxhuSDgmGN90Mqq.jpg",
         "releaseDate": "2025-06-24",
-        "rating": 9,
+        "rating": 8,
         "mediaType": "tv"
       },
       {
@@ -368,7 +368,7 @@
         "posterPath": "https://image.tmdb.org/t/p/w500/fDuC8THHGITyZcKpw3D4GmJYglf.jpg",
         "backdropPath": "https://image.tmdb.org/t/p/w500/x2l03MHSqQe6SfcdIO06yI4vI8C.jpg",
         "releaseDate": "2024-05-06",
-        "rating": 7.2,
+        "rating": 7.231,
         "mediaType": "tv"
       },
       {
@@ -469,7 +469,7 @@
         "id": 239479,
         "type": "tmdb",
         "title": "非凡医者",
-        "description": "本剧讲述了一个言行不同寻常、不擅长沟通的怪咖医学天才陈辉，进入医院后，亲历复杂的医患关系，面对生命的无常，屡展受挫，在外科同僚们的帮助下，步步突破自己“只见疾病不见人”的局限，成长为一名既可以医人也可以医心的好医生。",
+        "description": "本剧讲述了一个言行不同寻常、不擅长沟通的怪咖医学天才陈辉，进入医院后，亲历复杂的医患关系，面对生命的无常，屡屡受挫，在外科同僚们的帮助下，一步步突破自己“只见疾病不见人”的局限，成长为一名既可以医人也可以医心的好医生。",
         "posterPath": "https://image.tmdb.org/t/p/w500/b397FRoGVj2MucXwNh1vxr4D0CO.jpg",
         "backdropPath": "https://image.tmdb.org/t/p/w500/q2NFO23QwssZKrz0X4XGPFWaCxL.jpg",
         "releaseDate": "2023-11-17",
@@ -480,9 +480,9 @@
         "id": 232828,
         "type": "tmdb",
         "title": "装腔启示录",
-        "description": "繁华都市，流光浮华的红男绿女，平行的唐影和许子诠在飞机上偶遇，于是展开了一段暧昧博弈，互相撩拨的情爱故事。倔强勇敢当仁不让的律师唐影、自信温柔成熟魅惑的投行VP许子诠，两性吸引之下，这对戴着都市假面的成年男女经历 了从相爱到敢爱的求索之旅。",
+        "description": "讲述装理性世故的红圈所初级律师唐影与装潇洒随性的投行VP许子诠的暧昧拉锯，呈现都市男女由掩藏真实到卸下伪装收获幸福的过程，为观众呈现一部探讨城市人由孤寂的生存现状到心有归属的当代话题剧。",
         "posterPath": "https://image.tmdb.org/t/p/w500/whb14No4uwpHWkWYQC5Pf4IYfLW.jpg",
-        "backdropPath": "https://image.tmdb.org/t/p/w500/4iXscwakBM6ZDyV3zE5Q970YmEv.jpg",
+        "backdropPath": "https://image.tmdb.org/t/p/w500/mSgYZCkDYvxwBvGtIDIVKuYorV.jpg",
         "releaseDate": "2023-08-18",
         "rating": 7.4,
         "mediaType": "tv"
@@ -491,7 +491,7 @@
         "id": 225109,
         "type": "tmdb",
         "title": "无眠之境",
-        "description": "龙州市接连发生多起催眠术杀人案件，市民陷入恐慌。游戏人间的天才催眠师陆风平和深陷心魔的刑警罗飞，两人为了找出十年前共同被牵扯进的悬案真相，联手参与案件侦破，并最终揪出了背后的神秘组织，在这个过程当中，两人由相互猜忌对立到最后亦兄亦弟，共同成长 。",
+        "description": "故事讲述了游戏人间的天才催眠师陆风平和深陷心魔的刑警罗飞，两人为了找出十年前共同被牵扯进的悬案真相，联手破获了一系列催眠术杀人的案件，最终揪出背后的神秘组织，在这个过程当中，二人由相互猜忌对立到最后亦兄亦弟，共同成长。",
         "posterPath": "https://image.tmdb.org/t/p/w500/wKJjFOv0phreW9oWeOPGqIX2S5I.jpg",
         "backdropPath": "https://image.tmdb.org/t/p/w500/yjGCERuP9YPhvwBBlFIHclLPoV1.jpg",
         "releaseDate": "2023-04-23",
@@ -502,7 +502,7 @@
         "id": 219204,
         "type": "tmdb",
         "title": "今生也是第一次",
-        "description": "1993年，观念传统的戴思瑾，误以为丈夫出轨，在月子中展开了婚姻保卫战，然而发现丈夫的反常是因为生意失败被追债，戴思瑾为了孩子原谅丈夫，为替夫还债加入“下海”创业大军，开启了人生新篇章。2008年，产房里遭遇生死考验的陈兰青夫妇，因育儿观念冲突与上一代母亲们发生碰撞，也因这种碰撞重新认识了亲子关系，最终一家人互相理解，共同抚育新生命，期待新未来。2022年，路远芳在离婚后才发现自己已然怀孕，月子期间，面对育子与事业的双重压力，一向独立的路远芳懂得了互相帮助的意义，懂得了“家”的意思。戴思瑾、陈兰青、路远芳三位出生在不同时代的女性再次因育儿聚在一起，共同探讨育儿真谛，用心培养更优秀的下一代。",
+        "description": "故事跳转三段时空，在同一间妇产医院里，围绕三对夫妻展开的关于生育、婚姻、事业与家庭的故事。1993年的路明磊、戴思瑾在体制和市场变革的压力下寻求抓手，2008年的程领先、陈兰青，虽为人父母，内心却未长大成人，只得在妈妈和婆婆的夹缝中艰难生存，2022年的夏志雄、路远方面对生活逐渐失控，领悟到唯有与自己和解才能到达彼岸。",
         "posterPath": "https://image.tmdb.org/t/p/w500/9Ijg5MBfd4fRXYU3nyTkBxJpEdm.jpg",
         "backdropPath": "https://image.tmdb.org/t/p/w500/yicQRpmU1Z7gdcjM29j05uDHHvK.jpg",
         "releaseDate": "2023-01-27",
@@ -513,7 +513,7 @@
         "id": 216170,
         "type": "tmdb",
         "title": "云中谁寄锦书来",
-        "description": "双面人生引发冤家错位，鬼马爱恋新奇探案！该剧讲述了生在太医世家的沈鱼欲为家族洗冤翻案，设局嫁入周府，后结识了齐璋、高墨两位胸怀大志的少年，四人联手探案，在一步步接近真相中卷起朝堂风云，也陷入情感纠葛的故事。",
+        "description": "《云中谁寄锦书来》讲述了生在太医世家的沈鱼欲为家族洗冤翻案，设局嫁入周府，后结识了齐璋、高墨两位胸怀大志的少年，四人联手探案，在一步步接近真相中卷起朝堂风云，也陷入情感纠葛的故事。",
         "posterPath": "https://image.tmdb.org/t/p/w500/wu1omfhhBcgc7MGaZ2YC41OWKTi.jpg",
         "backdropPath": "https://image.tmdb.org/t/p/w500/wSgbwMMxQYymI0RKGKMwFKO5N7y.jpg",
         "releaseDate": "2022-12-11",
@@ -524,11 +524,11 @@
         "id": 209238,
         "type": "tmdb",
         "title": "覆流年",
-        "description": "睁开眼的那一刻，十载血雨腥风在陆安然的内心激荡，这世间桃花依旧，她却恨意丛生，不复单纯，那个立在船头尚未成为魔鬼的负心人，那个游游山野挚爱一生的少年郎，当他们再一次站在岁月的岔路，陆安然该如何抉择......",
+        "description": "陆家嫡女陆安然与庆王穆泽一见钟情，却落得深情错付无情人、全家惨遭设计的下场，得知真相后，陆安然发誓要保护家人，也终于看清守护在她身边，知己好友穆川的真心……",
         "posterPath": "https://image.tmdb.org/t/p/w500/332reQCJHAnCqJdMWLO8piSTaRh.jpg",
         "backdropPath": "https://image.tmdb.org/t/p/w500/aWbEdyuFPSt7c64AkFLIf7AF6DA.jpg",
         "releaseDate": "2022-08-31",
-        "rating": 8,
+        "rating": 8.2,
         "mediaType": "tv"
       },
       {
@@ -656,7 +656,7 @@
         "id": 129417,
         "type": "tmdb",
         "title": "我在他乡挺好的",
-        "description": "从小聪明上进的乔夕辰一路从小镇考到北京上学、工作。她工作勤恳踏实，日常精打细算，生活得有滋有味。好友胡晶晶突然离世，打破了她平静的生活。乔夕辰与一起长大的闺蜜许言、胡晶晶的表姐纪南嘉共同面对胡晶晶的离去，带着对她的怀念继续生活。乔夕辰公司空降领导简亦繁，并宣布裁员，同时她负责的项目突发状况，在自己的努力和同事们的帮助下，她顺利渡过难关，并与简亦繁走在了一起。原上司回归，乔夕辰被调离核心岗位，她不急不躁，做好本职工作，还找到新的事业方向。纪南嘉的公司因市场需求变化产生运营危机，她从生活中挖掘新商机，走向事业新高峰，同时收获真挚爱情。许言为了本地男友留在北京，却因消费观念差异与男友分手，她最终醒悟，摒弃对浮华的追逐，寻找真正的人生价值。三人都明白了乐观拼搏、勤恳踏实的意义，走向了新生活。",
+        "description": "《我在他乡挺好的》迁徙的大雁如同每一个在大都会中的异乡人，在呼啸的地铁与拥挤的楼宇为梦想而奔赴，这是属于她们的故事，也是属于我们每一个人的现实。",
         "posterPath": "https://image.tmdb.org/t/p/w500/s3n3f1FGqsuztzanZm2PFi9ZZvI.jpg",
         "backdropPath": "https://image.tmdb.org/t/p/w500/qGr5a2KVIpmNfI0h2DKAIET7QeI.jpg",
         "releaseDate": "2021-07-19",

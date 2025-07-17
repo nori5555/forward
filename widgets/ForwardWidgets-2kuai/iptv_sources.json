@@ -1,11 +1,12 @@
 {
-  "last_updated": "2025-07-17T01:04:46.538787",
+  "last_updated": "2025-07-16",
   "cctv": [
     {
       "name": "CCTV-1 综合",
       "description": "中国中央电视台综合频道，是中央广播电视总台拥有的一条以普通话广播为主的综合节目频道，中国中央电视台的主频道，为中国大陆发展最早、覆盖最广、影响力最大的电视频道。",
       "backdrop_path": "https://ik.imagekit.io/2kuai/tr:l-image,i-TV.png,w-bw_mul_1.5,h-bh_mul_4,bg-848484,lfo-center,l-image,i-CCTV1.png,lfo-center,l-end,l-end/CCTV1.png",
       "childItems": [
+        "http://8.138.7.223/tv/ptbtv.php?id=27",
         "rtmp://weishi.hyuui.top/weishi/1234_cctv1A"
       ]
     },
@@ -37,13 +38,17 @@
       "name": "CCTV-4 美洲",
       "description": "中国中央电视台中文国际频道美洲版，是专门为美洲地区华人观众打造的电视频道，提供新闻资讯、文化节目和专题报道等内容，促进中华文化在美洲地区的传播。",
       "backdrop_path": "https://ik.imagekit.io/2kuai/tr:l-image,i-TV.png,w-bw_mul_1.5,h-bh_mul_4,bg-848484,lfo-center,l-image,i-CCTV4美洲.png,lfo-center,l-end,l-end/CCTV4美洲.png",
-      "childItems": []
+      "childItems": [
+
+      ]
     },
     {
       "name": "CCTV-4 欧洲",
       "description": "中国中央电视台中文国际频道欧洲版，是面向欧洲地区华人观众的专业电视频道，提供新闻、文化、娱乐等多元化节目，搭建中欧文化交流的桥梁。",
       "backdrop_path": "https://ik.imagekit.io/2kuai/tr:l-image,i-TV.png,w-bw_mul_1.5,h-bh_mul_4,bg-848484,lfo-center,l-image,i-CCTV4欧洲.png,lfo-center,l-end,l-end/CCTV4欧洲.png",
-      "childItems": []
+      "childItems": [
+
+      ]
     },
     {
       "name": "CCTV-5 体育",
@@ -106,6 +111,7 @@
       "description": "中国中央电视台戏曲频道，是中国唯一的国家级专业戏曲电视频道，致力于传承和弘扬中国传统戏曲艺术，播出京剧、越剧、豫剧、黄梅戏等各类戏曲节目。",
       "backdrop_path": "https://ik.imagekit.io/2kuai/tr:l-image,i-TV.png,w-bw_mul_1.5,h-bh_mul_4,bg-848484,lfo-center,l-image,i-CCTV11.png,lfo-center,l-end,l-end/CCTV11.png",
       "childItems": [
+        "http://8.138.7.223/tv/ptbtv.php?id=28",
         "rtmp://weishi.hyuui.top/weishi/1234_cctv11"
       ]
     },
@@ -122,8 +128,8 @@
       "description": "中国中央电视台新闻频道，是中国首个24小时全天候播出的专业新闻频道，提供国内外重大新闻事件的即时报道、深度分析和权威解读，是中国最具影响力的新闻媒体之一。",
       "backdrop_path": "https://ik.imagekit.io/2kuai/tr:l-image,i-TV.png,w-bw_mul_1.5,h-bh_mul_4,bg-848484,lfo-center,l-image,i-CCTV13.png,lfo-center,l-end,l-end/CCTV13.png",
       "childItems": [
-        "http://tencentplaygsm.gztv.com/live/jingsai.m3u8",
-        "rtmp://weishi.hyuui.top/weishi/1234_cctv13"
+        "rtmp://weishi.hyuui.top/weishi/1234_cctv13",
+        "http://tencentplaygsm.gztv.com/live/jingsai.m3u8"
       ]
     },
     {
@@ -146,7 +152,9 @@
       "name": "CCTV-16 奥林匹克",
       "description": "中国中央电视台奥林匹克频道，是中国首个4K超高清体育频道，专注于奥林匹克运动和体育赛事报道，传播奥林匹克精神，推动体育文化发展。",
       "backdrop_path": "https://ik.imagekit.io/2kuai/tr:l-image,i-TV.png,w-bw_mul_1.5,h-bh_mul_4,bg-848484,lfo-center,l-image,i-CCTV16.png,lfo-center,l-end,l-end/CCTV16.png",
-      "childItems": []
+      "childItems": [
+        "http://push-rtmp-hs-spe-f5.douyincdn.com/live/wT8gT8cW4xO4cP5tU3oP1eN0iR5lA6.flv"
+      ]
     },
     {
       "name": "CCTV-17 农业农村",
@@ -218,7 +226,9 @@
       "name": "北京卫视",
       "description": "北京广播电视台旗下的综合性卫星电视频道，以新闻、文化、纪实和季播综艺为主要内容，致力于成为全国最具影响力的主流媒体之一。",
       "backdrop_path": "https://ik.imagekit.io/2kuai/tr:l-image,i-TV.png,w-bw_mul_1.8,h-bh_mul_4,bg-848484,lfo-center,l-image,i-北京卫视.png,lfo-center,l-end,l-end/北京卫视.png",
-      "childItems": []
+      "childItems": [
+
+      ]
     },
     {
       "name": "浙江卫视",
@@ -241,61 +251,81 @@
       "name": "重庆卫视",
       "description": "重庆广播电视集团（总台）旗下的综合性卫星电视频道，以中国故事，天下传奇为定位，致力于传播中华优秀传统文化，播出新闻、文化、电视剧等节目。",
       "backdrop_path": "https://ik.imagekit.io/2kuai/tr:l-image,i-TV.png,w-bw_mul_1.5,h-bh_mul_4,bg-848484,lfo-center,l-image,i-重庆卫视.png,lfo-center,l-end,l-end/重庆卫视.png",
-      "childItems": []
+      "childItems": [
+
+      ]
     },
     {
       "name": "吉林卫视",
       "backdrop_path": "https://ik.imagekit.io/2kuai/tr:l-image,i-TV.png,w-bw_mul_1.5,h-bh_mul_4,bg-848484,lfo-center,l-image,i-吉林卫视.png,lfo-center,l-end,l-end/吉林卫视.png",
       "description": "吉林广播电视台旗下的卫星频道，以故乡的月亮为呼号，立足吉林、面向全国，突出东北地域特色，播出新闻、综艺、电视剧等节目。",
-      "childItems": []
+      "childItems": [
+
+      ]
     },
     {
       "name": "辽宁卫视",
       "description": "辽宁广播电视台旗下的卫星频道，以家文化为核心，定位欢乐一家，播出新闻、综艺、电视剧和生活服务类节目，深受北方观众喜爱。",
       "backdrop_path": "https://ik.imagekit.io/2kuai/tr:l-image,i-TV.png,w-bw_mul_1.5,h-bh_mul_4,bg-848484,lfo-center,l-image,i-辽宁卫视.png,lfo-center,l-end,l-end/辽宁卫视.png",
-      "childItems": []
+      "childItems": [
+
+      ]
     },
     {
       "name": "宁夏卫视",
       "description": "宁夏广播电视总台旗下的卫星频道，是宁夏对外宣传的主窗口，以新闻宣传为主，同时播出社教、文化、经济和综艺娱乐等节目，展示宁夏的独特魅力。",
       "backdrop_path": "https://ik.imagekit.io/2kuai/tr:l-image,i-TV.png,w-bw_mul_1.5,h-bh_mul_4,bg-848484,lfo-center,l-image,i-宁夏卫视.png,lfo-center,l-end,l-end/宁夏卫视.png",
-      "childItems": []
+      "childItems": [
+
+      ]
     },
     {
       "name": "甘肃卫视",
       "description": "甘肃省广播电视总台旗下的卫星频道，以传承丝路文明，弘扬华夏文化为宗旨，播出新闻、文化、旅游、经济等节目，是展示甘肃形象的重要平台。",
       "backdrop_path": "https://ik.imagekit.io/2kuai/tr:l-image,i-TV.png,w-bw_mul_1.5,h-bh_mul_4,bg-848484,lfo-center,l-image,i-甘肃卫视.png,lfo-center,l-end,l-end/甘肃卫视.png",
-      "childItems": []
+      "childItems": [
+
+      ]
     },
     {
       "name": "青海卫视",
       "description": "青海广播电视台旗下的卫星频道，以大美青海为主题，突出环保、生态和民族特色，播出新闻、纪实、综艺等节目，展现青海的自然风光和人文魅力。",
       "backdrop_path": "https://ik.imagekit.io/2kuai/tr:l-image,i-TV.png,w-bw_mul_1.5,h-bh_mul_4,bg-848484,lfo-center,l-image,i-青海卫视.png,lfo-center,l-end,l-end/青海卫视.png",
-      "childItems": []
+      "childItems": [
+
+      ]
     },
     {
       "name": "陕西卫视",
       "description": "陕西广播电视台旗下的卫星电视频道，以传承中华文明、展示陕西形象为宗旨，突出历史文化特色，提供新闻、文化、旅游等多元化节目内容。",
       "backdrop_path": "https://ik.imagekit.io/2kuai/tr:l-image,i-TV.png,w-bw_mul_1.5,h-bh_mul_4,bg-848484,lfo-center,l-image,i-陕西卫视.png,lfo-center,l-end,l-end/陕西卫视.png",
-      "childItems": []
+      "childItems": [
+
+      ]
     },
     {
       "name": "山东卫视",
       "description": "山东广播电视台旗下的卫星频道，以悠久文明，青春中国为定位，弘扬齐鲁文化，播出新闻、文化、电视剧、综艺等节目，是中国重要的省级卫视之一。",
       "backdrop_path": "https://ik.imagekit.io/2kuai/tr:l-image,i-TV.png,w-bw_mul_1.5,h-bh_mul_4,bg-848484,lfo-center,l-image,i-山东卫视.png,lfo-center,l-end,l-end/山东卫视.png",
-      "childItems": []
+      "childItems": [
+
+      ]
     },
     {
       "name": "广东卫视",
       "description": "广东广播电视台旗下的卫星电视频道，以立足广东、面向全国、辐射海外为定位，突出岭南文化特色，提供新闻、综艺、电视剧等多元化节目内容。",
       "backdrop_path": "https://ik.imagekit.io/2kuai/tr:l-image,i-TV.png,w-bw_mul_1.5,h-bh_mul_4,bg-848484,lfo-center,l-image,i-广东卫视.png,lfo-center,l-end,l-end/广东卫视.png",
-      "childItems": []
+      "childItems": [
+
+      ]
     },
     {
       "name": "湖北卫视",
       "description": "湖北广播电视台旗下的卫星电视频道，以传播荆楚文化、展现湖北风采为宗旨，突出地域特色，提供新闻、文化、综艺、旅游等多元化节目内容。",
       "backdrop_path": "https://ik.imagekit.io/2kuai/tr:l-image,i-TV.png,w-bw_mul_1.5,h-bh_mul_4,bg-848484,lfo-center,l-image,i-湖北卫视.png,lfo-center,l-end,l-end/湖北卫视.png",
-      "childItems": []
+      "childItems": [
+
+      ]
     },
     {
       "name": "湖南卫视",
@@ -317,7 +347,9 @@
       "name": "江西卫视",
       "description": "江西广播电视台旗下的卫星频道，以红色经典，时尚江西为定位，传承红色基因，展现江西发展新貌，播出新闻、电视剧、综艺等节目。",
       "backdrop_path": "https://ik.imagekit.io/2kuai/tr:l-image,i-TV.png,w-bw_mul_1.5,h-bh_mul_4,bg-848484,lfo-center,l-image,i-江西卫视.png,lfo-center,l-end,l-end/江西卫视.png",
-      "childItems": []
+      "childItems": [
+
+      ]
     },
     {
       "name": "江苏卫视",
@@ -339,25 +371,33 @@
       "name": "广西卫视",
       "description": "广西广播电视台旗下的卫星频道，以美丽广西，开放前沿为定位，面向东南亚，展示广西的民族风情、自然风光和发展成就。",
       "backdrop_path": "https://ik.imagekit.io/2kuai/tr:l-image,i-TV.png,w-bw_mul_1.5,h-bh_mul_4,bg-848484,lfo-center,l-image,i-广西卫视.png,lfo-center,l-end,l-end/广西卫视.png",
-      "childItems": []
+      "childItems": [
+
+      ]
     },
     {
       "name": "贵州卫视",
       "description": "贵州广播电视台旗下的卫星频道，以中国瀑乡，爽爽贵州为宣传口号，突出多彩的民族文化和山地旅游资源，播出新闻、综艺、电视剧等节目。",
       "backdrop_path": "https://ik.imagekit.io/2kuai/tr:l-image,i-TV.png,w-bw_mul_1.5,h-bh_mul_4,bg-848484,lfo-center,l-image,i-贵州卫视.png,lfo-center,l-end,l-end/贵州卫视.png",
-      "childItems": []
+      "childItems": [
+
+      ]
     },
     {
       "name": "新疆卫视",
       "description": "新疆广播电视台旗下的卫星频道，是展示新疆形象、传播新疆声音的重要窗口，使用汉语播出，内容涵盖新闻、经济、文化、科教等方面。",
       "backdrop_path": "https://ik.imagekit.io/2kuai/tr:l-image,i-TV.png,w-bw_mul_1.5,h-bh_mul_4,bg-848484,lfo-center,l-image,i-新疆卫视.png,lfo-center,l-end,l-end/新疆卫视.png",
-      "childItems": []
+      "childItems": [
+
+      ]
     },
     {
       "name": "西藏卫视",
       "description": "西藏广播电视台旗下的卫星频道，是宣传西藏的重要喉舌，使用藏语和汉语播出，介绍西藏的政治、经济、社会、文化发展情况。",
       "backdrop_path": "https://ik.imagekit.io/2kuai/tr:l-image,i-TV.png,w-bw_mul_1.5,h-bh_mul_4,bg-848484,lfo-center,l-image,i-西藏卫视.png,lfo-center,l-end,l-end/西藏卫视.png",
-      "childItems": []
+      "childItems": [
+
+      ]
     },
     {
       "name": "海南卫视",
@@ -379,7 +419,9 @@
       "name": "内蒙古卫视",
       "description": "内蒙古广播电视台旗下的卫星频道，是中国唯一用蒙古语和汉语两种语言播出的卫星频道，展示草原文化和内蒙古的独特魅力。",
       "backdrop_path": "https://ik.imagekit.io/2kuai/tr:l-image,i-TV.png,w-bw_mul_1.5,h-bh_mul_4,bg-848484,lfo-center,l-image,i-内蒙古卫视.png,lfo-center,l-end,l-end/内蒙古卫视.png",
-      "childItems": []
+      "childItems": [
+
+      ]
     },
     {
       "name": "兵团卫视",
@@ -396,8 +438,8 @@
       "description": "浙江广播电视集团旗下的地面电视频道，以杭州及周边地区为主要覆盖范围，提供本地新闻、民生服务和娱乐节目等内容，贴近浙江百姓生活。",
       "backdrop_path": "https://ik.imagekit.io/2kuai/tr:l-image,i-TV.png,w-bw_mul_1.5,h-bh_mul_4,bg-848484,lfo-center,l-image,i-钱江都市.png,lfo-center,l-end,l-end/钱江都市.png",
       "childItems": [
-        "https://stream1.freetv.fun/zhe-jiang-qian-jiang-du-shi-5.ctv",
-        "https://ali-m-l.cztv.com/channels/lantian/channel002/1080p.m3u8"
+        "https://ali-m-l.cztv.com/channels/lantian/channel002/1080p.m3u8",
+        "https://stream1.freetv.fun/zhe-jiang-qian-jiang-du-shi-5.ctv"
       ]
     },
     {
@@ -405,8 +447,8 @@
       "description": "浙江广播电视集团旗下的专业新闻频道，24小时不间断提供浙江省内外新闻资讯，重点关注浙江经济社会发展动态和民生热点问题。",
       "backdrop_path": "https://ik.imagekit.io/2kuai/tr:l-image,i-TV.png,w-bw_mul_2,h-bh_mul_3,bg-848484,lfo-center,l-image,i-浙江新闻.png,lfo-center,l-end,l-end/浙江新闻.png",
       "childItems": [
-        "https://stream1.freetv.fun/7fa07158e038a9bae3747a0cb9f8e8ff1aaba32669d28d99a498716f16569c1d.m3u8",
-        "https://ali-m-l.cztv.com/channels/lantian/channel007/1080p.m3u8"
+        "https://ali-m-l.cztv.com/channels/lantian/channel007/1080p.m3u8",
+        "https://stream1.freetv.fun/7fa07158e038a9bae3747a0cb9f8e8ff1aaba32669d28d99a498716f16569c1d.m3u8"
       ]
     },
     {

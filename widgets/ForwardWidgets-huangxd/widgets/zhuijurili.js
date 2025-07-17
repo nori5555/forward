@@ -1,7 +1,7 @@
 // 追剧日历组件
 WidgetMetadata = {
     id: "zhuijurili",
-    title: "追剧日历(今/明日播出、各项榜单、今日推荐)",
+    title: "追剧日历(今/明日播出、周历、各项榜单、今日推荐)",
     modules: [
         {
             id: "todayPlay",
@@ -64,6 +64,83 @@ WidgetMetadata = {
                         {
                             title: "综艺",
                             value: "明天播出的综艺",
+                        },
+                    ],
+                },
+            ],
+        },
+        {
+            id: "weekPlay",
+            title: "播出周历",
+            requiresWebView: false,
+            functionName: "loadWeekTmdbItems",
+            cacheDuration: 21600,
+            params: [
+                {
+                    name: "sort_by",
+                    title: "类型",
+                    type: "enumeration",
+                    value: "juji_week.json",
+                    enumOptions: [
+                        {
+                            title: "剧集",
+                            value: "juji_week.json",
+                        },
+                        {
+                            title: "番剧",
+                            value: "fanju_week.json",
+                        },
+                        {
+                            title: "国漫",
+                            value: "guoman_week.json",
+                        },
+                        {
+                            title: "综艺",
+                            value: "zongyi_week.json",
+                        },
+                    ],
+                },
+                {
+                    name: "weekday",
+                    title: "周几",
+                    type: "enumeration",
+                    value: "All",
+                    belongTo: {
+                        paramName: "sort_by",
+                        value: ["juji_week.json", "fanju_week.json", "guoman_week.json", "zongyi_week.json"],
+                    },
+                    enumOptions: [
+                        {
+                            title: "全部",
+                            value: "All",
+                        },
+                        {
+                            title: "周一",
+                            value: "Monday",
+                        },
+                        {
+                            title: "周二",
+                            value: "Tuesday",
+                        },
+                        {
+                            title: "周三",
+                            value: "Wednesday",
+                        },
+                        {
+                            title: "周四",
+                            value: "Thursday",
+                        },
+                        {
+                            title: "周五",
+                            value: "Friday",
+                        },
+                        {
+                            title: "周六",
+                            value: "Saturday",
+                        },
+                        {
+                            title: "周日",
+                            value: "Sunday",
                         },
                     ],
                 },
@@ -171,9 +248,9 @@ WidgetMetadata = {
             ],
         },
     ],
-    version: "1.0.3",
+    version: "1.0.4",
     requiredVersion: "0.0.1",
-    description: "解析追剧日历今/明日播出剧集/番剧/国漫/综艺、各项榜单、今日推荐等【五折码：CHEAP.5;七折码：CHEAP】",
+    description: "解析追剧日历今/明日播出剧集/番剧/国漫/综艺、周历、各项榜单、今日推荐等【五折码：CHEAP.5;七折码：CHEAP】",
     author: "huangxd",
     site: "https://github.com/huangxd-/ForwardWidgets"
 };
@@ -319,6 +396,47 @@ async function loadTmdbItems(params = {}) {
     } else {
         res = await fetchDefaultData(sort_by);
     }
+
+    return res;
+}
+
+async function fetchWeekData(weekday, sort_by) {
+    const response = await Widget.http.get(`https://gist.githubusercontent.com/huangxd-/5ae61c105b417218b9e5bad7073d2f36/raw/${sort_by}`, {
+        headers: {
+            "User-Agent":
+                "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+        },
+    });
+
+    console.log("请求结果:", response.data);
+
+    let items;
+    if (weekday === "All") {
+        items = [
+            ...response.data.Monday,
+            ...response.data.Tuesday,
+            ...response.data.Wednesday,
+            ...response.data.Thursday,
+            ...response.data.Friday,
+            ...response.data.Saturday,
+            ...response.data.Sunday,
+        ];
+    } else {
+        items = response.data[weekday];
+    }
+
+    const tmdbIds = await fetchImdbItems(items);
+
+    console.log("tmdbIds: ", tmdbIds);
+
+    return tmdbIds;
+}
+
+async function loadWeekTmdbItems(params = {}) {
+    const weekday = params.weekday || "";
+    const sort_by = params.sort_by || "";
+
+    let res = await fetchWeekData(weekday, sort_by);
 
     return res;
 }
