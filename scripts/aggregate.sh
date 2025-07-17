@@ -140,6 +140,7 @@ echo -e "${YELLOW}📝 生成最终文件: $final_count 个模块${NC}"
 jq --tab '{
   "name": "Widgets Collection",
   "description": "集合聚合",
+  "icon": "https://github.com/pack1r/ForwardWidgets/raw/main/icon.png",
   "widgets": .
 }' "$TEMP_WIDGETS" > "$OUTPUT_FILE"
 

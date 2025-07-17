@@ -1,6 +1,7 @@
 {
 	"name": "Widgets Collection",
 	"description": "Widget聚合",
+	"icon": "https://github.com/pack1r/ForwardWidgets/raw/main/icon.png",
 	"widgets": [
 		{
 			"id": "91porn",
