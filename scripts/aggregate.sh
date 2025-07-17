@@ -38,9 +38,22 @@ for fwd_file in "$WIDGETS_DIR"/*/*.fwd; do
     jq --argjson new_widgets "$widgets_array" '. + $new_widgets' "$TEMP_WIDGETS" > "${TEMP_WIDGETS}.tmp" && mv "${TEMP_WIDGETS}.tmp" "$TEMP_WIDGETS"
 done
 
-# 根据URL去重
-echo "开始根据URL去重..."
-jq 'group_by(.url) | map(.[0]) | sort_by(.title)' "$TEMP_WIDGETS" > "${TEMP_WIDGETS}.dedup"
+# 智能去重：优先考虑版本号，其次考虑描述详细程度
+echo "开始智能去重..."
+jq '
+# 根据ID分组
+group_by(.id) | 
+map(
+  if length > 1 then 
+    # 如果有多个相同ID，选择版本最高的
+    # 如果版本相同，选择描述更详细的（长度更长的）
+    sort_by([.version, (.description | length)]) | reverse | .[0]
+  else 
+    .[0] 
+  end
+) | 
+sort_by(.title)
+' "$TEMP_WIDGETS" > "${TEMP_WIDGETS}.dedup"
 mv "${TEMP_WIDGETS}.dedup" "$TEMP_WIDGETS"
 
 # 生成最终文件

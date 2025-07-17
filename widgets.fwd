@@ -49,15 +49,6 @@
       "url": "https://raw.githubusercontent.com/pack1r/ForwardWidgets/refs/heads/main/widgets/javday.js"
     },
     {
-      "id": "ti.bemarkt.javday",
-      "title": "JAVDay",
-      "description": "获取 JAVDay 推荐",
-      "requiredVersion": "0.0.1",
-      "version": "1.1.0",
-      "author": "Ti",
-      "url": "https://raw.githubusercontent.com/quantumultxx/ForwardWidgets/refs/heads/main/Widgets/javday.js"
-    },
-    {
       "id": "ti.bemarkt.javrate",
       "title": "JAVRate",
       "description": "获取 JAVRate 推荐",
@@ -65,24 +56,6 @@
       "version": "2.1.0",
       "author": "Ti",
       "url": "https://raw.githubusercontent.com/pack1r/ForwardWidgets/refs/heads/main/widgets/javrate.js"
-    },
-    {
-      "id": "ti.bemarkt.javrate",
-      "title": "JAVRate",
-      "description": "获取 JAVRate 推荐",
-      "requiredVersion": "0.0.1",
-      "version": "2.1.0",
-      "author": "Ti",
-      "url": "https://raw.githubusercontent.com/quantumultxx/ForwardWidgets/refs/heads/main/Widgets/javrate.js"
-    },
-    {
-      "id": "jable",
-      "title": "Jable",
-      "description": "获取Jable全站视频",
-      "requiredVersion": "0.0.1",
-      "version": "1.0.6",
-      "author": "nibiru",
-      "url": "https://raw.githubusercontent.com/pack1r/ForwardWidgets/refs/heads/main/widgets/jable.js"
     },
     {
       "id": "jable",
@@ -123,7 +96,7 @@
     {
       "id": "trakt",
       "title": "Trakt我看&Trakt个性化推荐",
-      "description": "解析Trakt想看、在看、已看、片单、追剧日历以及根据个人数据生成的个性化推荐",
+      "description": "解析Trakt想看、在看、已看、片单、追剧日历以及根据个人数据生成的个性化推荐【五折码：CHEAP.5;七折码：CHEAP】",
       "requiredVersion": "0.0.1",
       "version": "1.0.11",
       "author": "huangxd",
@@ -146,6 +119,15 @@
       "version": "1.0.0",
       "author": "无名",
       "url": "https://raw.githubusercontent.com/xbzl/Forward/refs/heads/main/Widgets/wuming.js"
+    },
+    {
+      "id": "unknow.baranwang.xvideos",
+      "title": "XVideos",
+      "description": "Xvideos",
+      "requiredVersion": "0.0.1",
+      "version": "0.9.4",
+      "author": "匿名",
+      "url": "https://github.com/baranwang/forward-widget/releases/latest/download/xvideos.js"
     },
     {
       "id": "xvideos",
@@ -184,20 +166,11 @@
       "url": "https://raw.githubusercontent.com/pack1r/ForwardWidgets/refs/heads/main/widgets/combined.js"
     },
     {
-      "id": "forward.combined.media.lists",
-      "title": "影视榜单",
-      "description": "聚合豆瓣、TMDB、IMDB和Bangumi的影视动画榜单",
-      "requiredVersion": "0.0.1",
-      "version": "1.2.7",
-      "author": "阿米诺斯",
-      "url": "https://raw.githubusercontent.com/quantumultxx/ForwardWidgets/refs/heads/main/Widgets/ForwardWidgets.js"
-    },
-    {
       "id": "hot_picks",
       "title": "热门精选",
       "description": "获取最新热播剧和热门影片推荐",
       "requiredVersion": "0.0.1",
-      "version": "1.1.6",
+      "version": "1.1.7",
       "author": "两块",
       "url": "https://raw.githubusercontent.com/2kuai/ForwardWidgets/refs/heads/main/Widgets/HotPicks.js"
     },
@@ -206,14 +179,14 @@
       "title": "电视台",
       "description": "获取热门电视直播频道",
       "requiredVersion": "0.0.1",
-      "version": "1.0.1",
+      "version": "1.1.4",
       "author": "两块",
       "url": "https://raw.githubusercontent.com/2kuai/ForwardWidgets/refs/heads/main/Widgets/TvLive.js"
     },
     {
       "id": "live",
       "title": "直播(电视+网络)",
-      "description": "解析直播订阅链接",
+      "description": "解析直播订阅链接【五折码：CHEAP.5;七折码：CHEAP】",
       "requiredVersion": "0.0.1",
       "version": "1.0.8",
       "author": "huangxd",
@@ -221,17 +194,8 @@
     },
     {
       "id": "douban",
-      "title": "豆瓣",
-      "description": "解析豆瓣片单，获取视频信息",
-      "requiredVersion": "0.0.1",
-      "version": "1.0.0",
-      "author": "pack1r",
-      "url": "https://raw.githubusercontent.com/pack1r/ForwardWidgets/refs/heads/main/widgets/douban.js"
-    },
-    {
-      "id": "douban",
       "title": "豆瓣我看&豆瓣个性化推荐",
-      "description": "解析豆瓣想看、在看、已看以及根据个人数据生成的个性化推荐",
+      "description": "解析豆瓣想看、在看、已看以及根据个人数据生成的个性化推荐【五折码：CHEAP.5;七折码：CHEAP】",
       "requiredVersion": "0.0.1",
       "version": "1.0.13",
       "author": "huangxd",
@@ -239,17 +203,17 @@
     },
     {
       "id": "zhuijurili",
-      "title": "追剧日历(今/明日播出、各项榜单、今日推荐)",
-      "description": "解析追剧日历今/明日播出剧集/番剧/国漫/综艺、各项榜单、今日推荐等",
+      "title": "追剧日历(今/明日播出、周历、各项榜单、今日推荐)",
+      "description": "解析追剧日历今/明日播出剧集/番剧/国漫/综艺、周历、各项榜单、今日推荐等【五折码：CHEAP.5;七折码：CHEAP】",
       "requiredVersion": "0.0.1",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "author": "huangxd",
       "url": "https://raw.githubusercontent.com/huangxd-/ForwardWidgets/refs/heads/main/widgets/zhuijurili.js"
     },
     {
       "id": "yatu",
       "title": "雅图(每日放送+点播排行榜+评分排行榜)",
-      "description": "解析雅图每日放送更新以及各类排行榜",
+      "description": "解析雅图每日放送更新以及各类排行榜【五折码：CHEAP.5;七折码：CHEAP】",
       "requiredVersion": "0.0.1",
       "version": "1.0.6",
       "author": "huangxd",
