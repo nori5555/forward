@@ -6,10 +6,10 @@
     {
       "id": "91porn",
       "title": "91Porn",
-      "description": "获取 91Porn 视频",
+      "description": "91Porn",
       "requiredVersion": "0.0.1",
-      "version": "0.5.0",
-      "author": "Baran",
+      "version": "0.9.4",
+      "author": "匿名",
       "url": "https://github.com/baranwang/forward-widget/releases/latest/download/91porn.js"
     },
     {
@@ -49,6 +49,15 @@
       "url": "https://raw.githubusercontent.com/pack1r/ForwardWidgets/refs/heads/main/widgets/javday.js"
     },
     {
+      "id": "ti.bemarkt.javday",
+      "title": "JAVDay",
+      "description": "获取 JAVDay 推荐",
+      "requiredVersion": "0.0.1",
+      "version": "1.1.0",
+      "author": "Ti",
+      "url": "https://raw.githubusercontent.com/quantumultxx/ForwardWidgets/refs/heads/main/Widgets/javday.js"
+    },
+    {
       "id": "ti.bemarkt.javrate",
       "title": "JAVRate",
       "description": "获取 JAVRate 推荐",
@@ -56,6 +65,15 @@
       "version": "2.1.0",
       "author": "Ti",
       "url": "https://raw.githubusercontent.com/pack1r/ForwardWidgets/refs/heads/main/widgets/javrate.js"
+    },
+    {
+      "id": "ti.bemarkt.javrate",
+      "title": "JAVRate",
+      "description": "获取 JAVRate 推荐",
+      "requiredVersion": "0.0.1",
+      "version": "2.1.0",
+      "author": "Ti",
+      "url": "https://raw.githubusercontent.com/quantumultxx/ForwardWidgets/refs/heads/main/Widgets/javrate.js"
     },
     {
       "id": "jable",
@@ -67,11 +85,20 @@
       "url": "https://raw.githubusercontent.com/pack1r/ForwardWidgets/refs/heads/main/widgets/jable.js"
     },
     {
+      "id": "jable",
+      "title": "Jable",
+      "description": "获取 Jable 视频",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.8",
+      "author": "nibiru",
+      "url": "https://raw.githubusercontent.com/quantumultxx/ForwardWidgets/refs/heads/main/Widgets/jable.js"
+    },
+    {
       "id": "ti.bemarkt.podcast",
       "title": "Podcast",
       "description": "获取 RSS 播客数据",
       "requiredVersion": "0.0.1",
-      "version": "1.0.0",
+      "version": "2.1.0",
       "author": "Ti",
       "url": "https://raw.githubusercontent.com/bemarkt/scripts/refs/heads/master/provider/Forward/widgets/podcast.js"
     },
@@ -80,7 +107,7 @@
       "title": "Pornhub",
       "description": "在线观看Pornhub",
       "requiredVersion": "0.0.1",
-      "version": "1.0.4",
+      "version": "1.0.5",
       "author": "海带",
       "url": "https://raw.githubusercontent.com/Madai-v/ForwardWidgets/refs/heads/main/Widgets/ph.js"
     },
@@ -112,9 +139,18 @@
       "url": "https://raw.githubusercontent.com/bemarkt/scripts/refs/heads/master/provider/Forward/widgets/vod.js"
     },
     {
-      "id": "unknow.baranwang.xvideos",
+      "id": "wuming.VOD",
+      "title": "VOD",
+      "description": "根据Keyword,用于VOD",
+      "requiredVersion": "0.0.1",
+      "version": "1.0.0",
+      "author": "无名",
+      "url": "https://raw.githubusercontent.com/xbzl/Forward/refs/heads/main/Widgets/wuming.js"
+    },
+    {
+      "id": "xvideos",
       "title": "XVideos",
-      "description": "Xvideos",
+      "description": "XVideos",
       "requiredVersion": "0.0.1",
       "version": "0.9.4",
       "author": "匿名",
@@ -128,15 +164,6 @@
       "version": "1.0.0",
       "author": "两块",
       "url": "https://raw.githubusercontent.com/2kuai/ForwardWidgets/refs/heads/main/Widgets/CloudCinema.js"
-    },
-    {
-      "id": "ddys_tv",
-      "title": "低端影视",
-      "description": "获取在线电影、电视剧、动画",
-      "requiredVersion": "0.0.1",
-      "version": "1.0.0",
-      "author": "两块",
-      "url": "https://raw.githubusercontent.com/2kuai/ForwardWidgets/refs/heads/main/Widgets/ddys.js"
     },
     {
       "id": "movie_paradise",
@@ -157,11 +184,20 @@
       "url": "https://raw.githubusercontent.com/pack1r/ForwardWidgets/refs/heads/main/widgets/combined.js"
     },
     {
+      "id": "forward.combined.media.lists",
+      "title": "影视榜单",
+      "description": "聚合豆瓣、TMDB、IMDB和Bangumi的影视动画榜单",
+      "requiredVersion": "0.0.1",
+      "version": "1.2.7",
+      "author": "阿米诺斯",
+      "url": "https://raw.githubusercontent.com/quantumultxx/ForwardWidgets/refs/heads/main/Widgets/ForwardWidgets.js"
+    },
+    {
       "id": "hot_picks",
       "title": "热门精选",
       "description": "获取最新热播剧和热门影片推荐",
       "requiredVersion": "0.0.1",
-      "version": "1.1.7",
+      "version": "1.1.6",
       "author": "两块",
       "url": "https://raw.githubusercontent.com/2kuai/ForwardWidgets/refs/heads/main/Widgets/HotPicks.js"
     },
@@ -170,14 +206,14 @@
       "title": "电视台",
       "description": "获取热门电视直播频道",
       "requiredVersion": "0.0.1",
-      "version": "1.1.4",
+      "version": "1.0.1",
       "author": "两块",
       "url": "https://raw.githubusercontent.com/2kuai/ForwardWidgets/refs/heads/main/Widgets/TvLive.js"
     },
     {
       "id": "live",
       "title": "直播(电视+网络)",
-      "description": "解析直播订阅链接【五折码：CHEAP.5;七折码：CHEAP】",
+      "description": "解析直播订阅链接",
       "requiredVersion": "0.0.1",
       "version": "1.0.8",
       "author": "huangxd",
