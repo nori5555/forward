@@ -138,10 +138,10 @@ echo -e "${YELLOW}📝 生成最终文件: $final_count 个模块${NC}"
 
 # 生成最终输出文件
 jq --tab '{
-  "name": "Forward Auto Updater",
+  "name": "Widgets Collection",
   "version": "1.2.6",
   "description": "聚合的Forward Widget集合",
-  "author": "Forward Project",
+  "author": "Widgets Collection",
   "license": "MIT",
   "widgets": .
 }' "$TEMP_WIDGETS" > "$OUTPUT_FILE"
