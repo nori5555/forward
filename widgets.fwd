@@ -1,9 +1,6 @@
 {
 	"name": "Widgets Collection",
-	"version": "1.2.6",
 	"description": "Widget聚合",
-	"author": "Widgets Collection",
-	"license": "MIT",
 	"widgets": [
 		{
 			"id": "91porn",

@@ -139,10 +139,7 @@ echo -e "${YELLOW}📝 生成最终文件: $final_count 个模块${NC}"
 # 生成最终输出文件
 jq --tab '{
   "name": "Widgets Collection",
-  "version": "1.2.6",
   "description": "集合聚合",
-  "author": "Widgets Collection",
-  "license": "MIT",
   "widgets": .
 }' "$TEMP_WIDGETS" > "$OUTPUT_FILE"
 
