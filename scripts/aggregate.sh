@@ -140,7 +140,7 @@ echo -e "${YELLOW}📝 生成最终文件: $final_count 个模块${NC}"
 jq --tab '{
   "name": "Widgets Collection",
   "version": "1.2.6",
-  "description": "聚合的Forward Widget集合",
+  "description": "集合聚合",
   "author": "Widgets Collection",
   "license": "MIT",
   "widgets": .
